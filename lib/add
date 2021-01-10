@@ -32,15 +32,11 @@ if [ -z "$TOKEN_KEY" ]; then
 fi
 
 echo
-echo "An empty password will not lock the file"
-read_hidden_input "Password: "
-echo
 PASSWORD1=$IN
 
 create_plain_token
 
 if [ -z "$PASSWORD1" ]; then
-  echo "WARN: Token is not password protected!"
   echo "Created [$INPUT_FILE]"
   exit 0
 fi
